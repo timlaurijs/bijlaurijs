@@ -1,0 +1,40 @@
+@import "../style/config";
+
+.grid {
+  display: flex;
+  max-width: 100%;
+  margin: 10px;
+}
+.menubar {
+  flex: 1;
+  margin: 20px;
+  a {
+    font-family: "nautikbold";
+    font-weight: normal;
+    font-style: bold;
+    text-decoration: none;
+    font-size: 16pt;
+  }
+  a:hover {
+    color: white;
+    font-family: "nautikblack";
+  }
+}
+.menubar-inner {
+  position: fixed;
+  background: $primary;
+  // margin: -10px;
+  padding: 10px;
+  width: calc(100% - 60px);
+  z-index: 1;
+}
+.images {
+  flex: 2;
+  flex-direction: column;
+  z-index: 99;
+}
+
+.image {
+  max-width: 100%;
+  padding-bottom: 5px;
+}
