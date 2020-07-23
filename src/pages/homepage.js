@@ -3,6 +3,7 @@ import { useDispatch, useSelector } from "react-redux"
 import { Switch, Route } from "react-router-dom"
 import { fetchMenuItems } from "../store/menubar/actions"
 import { selectMenuItems } from "../store/menubar/selectors"
+import "./homepage.scss"
 import Menubar from "../components/menubar"
 import Images from "../components/images"
 
@@ -15,22 +16,16 @@ export default function Homepage() {
     dispatch(fetchMenuItems())
   }, [dispatch])
 
-  {
-    /* <div>
-    {item.images.map((image) => {
-      return <Images key={image.id} url={image.imageUrl} />
-    })}
-  </div> */
-  }
-
   return (
-    <div>
-      <div>
-        {menuItems.map((item) => {
-          return <Menubar key={item.id} item={item.item} />
-        })}
+    <div className="grid">
+      <div className="menubar">
+        <div className="menubar-inner">
+          {menuItems.map((item) => {
+            return <Menubar key={item.id} item={item.item} />
+          })}
+        </div>
       </div>
-      <div>
+      <div className="images">
         {menuItems.map((item) => {
           return item.images.map((image) => {
             // console.log("what are the images?", image.imageUrl)
