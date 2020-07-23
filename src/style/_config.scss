@@ -1,6 +1,20 @@
 @import url("https://fonts.googleapis.com/css?family=Alatsi|Patua+One&display=swap");
+@font-face {
+  font-family: "nautikbold";
+  src: url("../style/fontfaces/nautik-bold-webfont.woff") format("woff2");
+  src: url("../style/fontfaces/nautik-bold-webfont.woff2") format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: "nautikblack";
+  src: url("../style/fontfaces/nautik-black-webfont.woff") format("woff2");
+  src: url("../style/fontfaces/nautik-black-webfont.woff2") format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
 
-$primary: #006d80;
+$primary: #f8b319;
 $secondary: #00a5bf;
 $light: #e9edf3;
 $text-color: #333;
