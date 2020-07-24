@@ -3,6 +3,7 @@ import { useDispatch, useSelector } from "react-redux"
 import { useHistory } from "react-router-dom"
 import { selectToken } from "../store/user/selectors"
 import { logOut } from "../store/user/actions"
+import UploadImageForm from "../components/uploadImageForm"
 
 export default function Admin() {
   const dispatch = useDispatch()
@@ -18,7 +19,10 @@ export default function Admin() {
   return (
     <div>
       <h2>Admin page</h2>
-      <div>some form over here</div>
+      <br></br>
+      <UploadImageForm />
+      <br></br>
+      <br></br>
       <button onClick={() => dispatch(logOut())}>Log out</button>
     </div>
   )
