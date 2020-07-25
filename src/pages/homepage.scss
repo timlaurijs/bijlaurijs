@@ -1,12 +1,28 @@
 @import "../style/config";
 
-.grid {
+.container {
   display: flex;
+  flex-direction: row;
   max-width: 100%;
   margin: 10px;
 }
-.menubar {
+
+.grid {
+  display: flex;
+  flex-direction: row;
+}
+.item {
+  display: flex;
   flex: 1;
+  flex-direction: column;
+  // div {
+  //   display: block;
+  // }
+  // h2 {
+  //   display: flex;
+  // }
+}
+.menubar {
   margin: 20px;
   a {
     font-family: "nautikbold";
@@ -28,7 +44,14 @@
   width: calc(100% - 60px);
   z-index: 1;
 }
+
+.bodyText {
+  // flex: 1;
+  width: 50%;
+  // flex-direction: column;
+}
 .images {
+  display: flex;
   flex: 2;
   flex-direction: column;
   z-index: 99;
