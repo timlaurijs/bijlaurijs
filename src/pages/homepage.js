@@ -26,7 +26,6 @@ export default function Homepage() {
   useEffect(() => {
     dispatch(fetchTimeline())
     dispatch(fetchChapters())
-    // !selectedItem ? dispatch(setCurrentChapter(chapterItems[0]._id)) : null
   }, [dispatch])
 
   return (
