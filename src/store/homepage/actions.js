@@ -12,23 +12,23 @@ const fetchTimelineSuccess = (data) => {
 export const fetchTimeline = () => async (dispatch, getState) => {
   const client = getState().homepageData.sanityClient
   const query = `
-  * [_type=="afbeeldingen"] | order (post.order, _createdAt, ASC){
+  * [_type=="afbeeldingen"] | order (postOrder, ASC){
     _id,
-    "image": mainImage.asset->{
-      url,
+    ...mainImage.asset->{
+     "imageUrl": url,
     },
-    post->{
-    _id,
-    order
+    ...post->{
+    "postId": _id,
+    "postOrder": order
   },
-seasons[0]->{
-      title,
+...seasons[0]->{
+      "season":title,
     }
   }
   `
   await client.fetch(query).then((data) => {
-    const clientSorted = [...data].sort((a, b) => a.order - b.order)
-    dispatch(fetchTimelineSuccess(data))
+    const clientSorted = [...data].sort((a, b) => a.postOrder - b.postOrder)
+    dispatch(fetchTimelineSuccess(clientSorted))
   })
 }
 
@@ -46,15 +46,16 @@ export const fetchChapters = () => async (dispatch, getState) => {
     _id,
     order,
     title,
-    body[0]{
-      children[0]{
-       text 
+    ...body[0]{
+      ...children[0]{
+       "body": text 
       }
     }
   } 
   `
   await client.fetch(query).then((data) => {
     dispatch(fetchChaptersSuccess(data))
+    //set default chapter to the 1st in the list
     dispatch(setCurrentChapter(data[0]._id))
   })
 }
