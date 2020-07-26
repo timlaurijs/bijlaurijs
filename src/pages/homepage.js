@@ -18,10 +18,6 @@ export default function Homepage() {
   const chapterItems = useSelector(selectChapterItems)
   const timelineItems = useSelector(selectTimelineItems)
   const selectedItem = useSelector(selectedChapter)
-  // console.log("chapterItems", chapterItems)
-  // console.log("timelineItems", timelineItems)
-
-  console.log("what is selected keyItem", selectedItem[0])
 
   useEffect(() => {
     dispatch(fetchTimeline())
@@ -35,28 +31,30 @@ export default function Homepage() {
       ))}
 
       {chapterItems.map((chapter, index) => {
-        console.log(chapter._id, index)
         if (chapter._id === selectedItem[0]) {
           return (
             <BodyText
               key={chapter._id}
               order={chapter.order}
               title={chapter.title}
-              body={chapter.body.children.text}
+              body={chapter.body}
             />
           )
         }
       })}
 
-      {timelineItems.map((image) => (
-        <Images
-          key={image._id}
-          url={image.image.url}
-          postId={image.post.id}
-          order={image.post.order}
-          season={image.seasons.title}
-        />
-      ))}
+      {timelineItems.map((image) => {
+        const season = !image.season ? null : image.season
+        return (
+          <Images
+            key={image._id}
+            url={image.imageUrl}
+            postId={image.postId}
+            order={image.postOrder}
+            season={season}
+          />
+        )
+      })}
     </div>
   )
 }
