@@ -1,1 +1,1 @@
-export const selectMenuItems = (state) => state.menuBar
+export const selectedChapter = (state) => state.menuBar

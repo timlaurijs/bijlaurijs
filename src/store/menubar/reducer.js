@@ -1,11 +1,12 @@
-import { FETCH_MENU_ITEMS_SUCCESS } from "./actions"
+import { setCurrentChapterSuccess } from "./actions"
 
-const initialstate = []
+const initialState = []
 
-export default (state = initialstate, { type, payload }) => {
+export default (state = initialState, { type, payload }) => {
   switch (type) {
-    case FETCH_MENU_ITEMS_SUCCESS:
-      return [...state, ...payload]
+    case "SET_CURRENT_CHAPTER_SUCCESS":
+      return [...payload]
+
     default:
       return state
   }

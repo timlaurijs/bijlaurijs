@@ -1,106 +1,63 @@
 import React, { useEffect, useState } from "react"
 import { useDispatch, useSelector } from "react-redux"
 import { Switch, Route } from "react-router-dom"
-import { fetchMenuItems } from "../store/menubar/actions"
-import { selectMenuItems } from "../store/menubar/selectors"
+import { fetchTimeline, fetchChapters } from "../store/homepage/actions"
+import { setCurrentChapter } from "../store/menubar/actions"
+import { selectedChapter } from "../store/menubar/selectors"
+import {
+  selectChapterItems,
+  selectTimelineItems,
+} from "../store/homepage/selectors"
 import "./homepage.scss"
-import sanity from "@sanity/client"
 import Menubar from "../components/menubar"
+import BodyText from "../components/bodyText"
 import Images from "../components/images"
-const { NODE_ENV, REACT_APP_SANITY_PROJECT_ID: PROJECT_ID } = process.env
 
 export default function Homepage() {
-  const [posts, setPosts] = useState([])
-  const [images, setImages] = useState([])
+  const dispatch = useDispatch()
+  const chapterItems = useSelector(selectChapterItems)
+  const timelineItems = useSelector(selectTimelineItems)
+  const selectedItem = useSelector(selectedChapter)
+  // console.log("chapterItems", chapterItems)
+  // console.log("timelineItems", timelineItems)
 
-  const sanityClient = require("@sanity/client")
-  const client = sanityClient({
-    projectId: PROJECT_ID,
-    dataset: "production",
-    useCdn: NODE_ENV === "production",
-  })
+  console.log("what is selected keyItem", selectedItem[0])
 
-  const getPostQuery = `
-  *[_type=="post"] | order(order asc){
-    title,
-    body,
-  }
-  `
-  const getImagesQuery = `
-  * [_type=="afbeeldingen"]{
-    _id,
-    "image": mainImage.asset->,
-    post->,
-    seasons
-  }
-  `
   useEffect(() => {
-    client.fetch(getImagesQuery).then((images) => {
-      // console.log("images 1", images)
-      setImages(images)
-    })
-    client.fetch(getPostQuery).then((posts) => {
-      // console.log("Posts 1", posts)
-      setPosts(posts)
-    })
-  }, [])
-
-  const pictures = images.map((image) => {
-    return image.image.path
-  })
-
-  console.log(pictures)
-  console.log(images)
-
-  //image.path
-
-  const postBody = posts.map((post) => {
-    return `${post.title}
-            ${post.body[0].children[0].text}`
-  })
-  const postTitle = posts.map((post) => {
-    return post.title
-  })
+    dispatch(fetchTimeline())
+    dispatch(fetchChapters())
+    // !selectedItem ? dispatch(setCurrentChapter(chapterItems[0]._id)) : null
+  }, [dispatch])
 
   return (
-    <div className="container">
-      <div className="grid">
-        <div className="item">
-          {posts.map((post) => {
-            return (
-              <div>
-                <h2>{post.title}</h2>
-                <p>{post.body[0].children[0].text}</p>
-              </div>
-            )
-          })}
-        </div>
-        <div className="images">
-          {images.map((image) => {
-            return <img className="image" src={image.image.url} />
-          })}
-        </div>
-      </div>
+    <div>
+      {chapterItems.map(({ _id, order, title }) => (
+        <Menubar key={_id} id={_id} order={order} title={title} />
+      ))}
+
+      {chapterItems.map((chapter, index) => {
+        console.log(chapter._id, index)
+        if (chapter._id === selectedItem[0]) {
+          return (
+            <BodyText
+              key={chapter._id}
+              order={chapter.order}
+              title={chapter.title}
+              body={chapter.body.children.text}
+            />
+          )
+        }
+      })}
+
+      {timelineItems.map((image) => (
+        <Images
+          key={image._id}
+          url={image.image.url}
+          postId={image.post.id}
+          order={image.post.order}
+          season={image.seasons.title}
+        />
+      ))}
     </div>
   )
 }
-
-/*
-    <div className="grid">
-      <div className="menubar">
-        <div className="menubar-inner">
-          {menuItems.map((item) => {
-            return <Menubar key={item.id} item={item.item} />
-          })}
-        </div>
-      </div>
-      <div className="images">
-        {menuItems.map((item) => {
-          return item.images.map((image) => {
-            // console.log("what are the images?", image.imageUrl)
-            return <Images key={image.id} url={image.imageUrl} />
-          })
-        })}
-      </div>
-    </div>
-*/
