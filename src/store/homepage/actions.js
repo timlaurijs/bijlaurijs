@@ -20,10 +20,8 @@ export const fetchTimeline = () => async (dispatch, getState) => {
     ...post->{
     "postId": _id,
     "postOrder": order
-  },
-...seasons[0]->{
-      "season":title,
-    }
+  	},
+  	seasons,
   }
   `
   await client.fetch(query).then((data) => {
