@@ -1,0 +1,22 @@
+@import "../style/config";
+
+.Timeline {
+  position: absolute;
+  padding: 20px;
+  padding-left: 40px;
+  padding-right: 10px;
+  top: 0;
+  width: 50%;
+  right: 0px;
+  box-sizing: border-box;
+  .chapter {
+    margin-bottom: 5px;
+    img {
+      display: inline-block;
+      width: 100%;
+      margin: 0px;
+      padding: 0px;
+      margin-bottom: 5px;
+    }
+  }
+}
