@@ -1,59 +1,41 @@
 import { setCurrentChapter } from "../menubar/actions"
-export const FETCH_TIMELINE_SUCCESS = "FETCH_TIMELINE_SUCCESS"
-export const FETCH_CHAPTERS_SUCCESS = "FETCH_CHAPTERS_SUCCESS"
+import { sanityClient } from "../../index"
+import { fetchMenuItemsQuery, fetchTimelineItemsQuery } from "./queries"
+export const FETCH_TIMELINE_ITEMS_SUCCESS = "FETCH_TIMELINE_ITEMS_SUCCESS"
+export const FETCH_MENU_ITEMS_SUCCESS = "FETCH_MENU_ITEMS_SUCCESS"
 
-const fetchTimelineSuccess = (data) => {
-  return {
-    type: FETCH_TIMELINE_SUCCESS,
-    payload: data,
-  }
-}
-
-export const fetchTimeline = () => async (dispatch, getState) => {
-  const client = getState().homepageData.sanityClient
-  const query = `
-  * [_type=="afbeeldingen"] | order (postOrder, ASC){
-    _id,
-    ...mainImage.asset->{
-     "imageUrl": url,
-    },
-    ...post->{
-    "postId": _id,
-    "postOrder": order
-  	},
-  	seasons,
-  }
-  `
-  await client.fetch(query).then((data) => {
+export const fetchTimelineItems = () => async (dispatch, getState) => {
+  await sanityClient.fetch(fetchTimelineItemsQuery).then((data) => {
     const clientSorted = [...data].sort((a, b) => a.postOrder - b.postOrder)
-    dispatch(fetchTimelineSuccess(clientSorted))
+    dispatch(fetchTimelineItemsSuccess(clientSorted))
   })
 }
-
-const fetchChaptersSuccess = (data) => {
+const fetchTimelineItemsSuccess = (data) => {
   return {
-    type: FETCH_CHAPTERS_SUCCESS,
+    type: FETCH_TIMELINE_ITEMS_SUCCESS,
     payload: data,
   }
 }
 
-export const fetchChapters = () => async (dispatch, getState) => {
-  const client = getState().homepageData.sanityClient
-  const query = `
-  * [_type=="post"] | order (order, ASC){
-    _id,
-    order,
-    title,
-    ...body[0]{
-      ...children[0]{
-       "body": text 
-      }
-    }
-  } 
-  `
-  await client.fetch(query).then((data) => {
-    dispatch(fetchChaptersSuccess(data))
+export const fetchMenuItems = () => async (dispatch, getState) => {
+  await sanityClient.fetch(fetchMenuItemsQuery).then((data) => {
+    dispatch(fetchMenuItemsSuccess(data))
     //set default chapter to the 1st in the list
-    dispatch(setCurrentChapter(data[0]._id))
+    dispatch(setSelectedMenuItem(data[0]._id))
+    console.log("waht is selected current chapter?", data[0]._id)
   })
+}
+const fetchMenuItemsSuccess = (data) => {
+  return {
+    type: FETCH_MENU_ITEMS_SUCCESS,
+    payload: data,
+  }
+}
+
+export const setSelectedMenuItem = (data) => {
+  const SET_SELECTED_MENU_ITEM = "SET_SELECTED_MENU_ITEM"
+  return {
+    type: SET_SELECTED_MENU_ITEM,
+    payload: [data],
+  }
 }
