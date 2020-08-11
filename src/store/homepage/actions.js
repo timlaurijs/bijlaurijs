@@ -1,4 +1,3 @@
-import { setCurrentChapter } from "../menubar/actions"
 import { sanityClient } from "../../index"
 import { fetchMenuItemsQuery, fetchTimelineItemsQuery } from "./queries"
 export const FETCH_TIMELINE_ITEMS_SUCCESS = "FETCH_TIMELINE_ITEMS_SUCCESS"
