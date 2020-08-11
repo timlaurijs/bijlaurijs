@@ -1,24 +1,24 @@
 import React from "react"
 import "./Menubar.scss"
 import { useDispatch, useSelector } from "react-redux"
-import { setCurrentChapter } from "../store/menubar/actions"
-import { selectChapterItems } from "../store/homepage/selectors"
+import { setSelectedMenuItem } from "../store/homepage/actions"
+import { selectMenuItems } from "../store/homepage/selectors"
 
 export default function Menubar() {
   const dispatch = useDispatch()
-  const chapterItems = useSelector(selectChapterItems)
-  // console.log("what are the chapter items?", chapterItems)
+  const menuItems = useSelector(selectMenuItems)
+  // console.log("what are the chapter items?", menuItems)
 
   return (
     <div className="menubar">
-      {chapterItems.map((chapter) => {
+      {menuItems.map((menu) => {
         return (
           <a
-            href={`#${chapter._id}`}
-            key={chapter._id}
-            onClick={() => dispatch(setCurrentChapter(chapter._id))}
+            href={`#${menu._id}`}
+            key={menu._id}
+            onClick={() => dispatch(setSelectedMenuItem(menu._id))}
           >
-            {chapter.title}
+            {menu.title}
           </a>
         )
       })}
