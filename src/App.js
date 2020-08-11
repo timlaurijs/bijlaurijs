@@ -3,7 +3,7 @@ import "./App.scss"
 import { useDispatch } from "react-redux"
 import { fetchTimelineItems, fetchMenuItems } from "./store/homepage/actions"
 import { Switch, Route } from "react-router-dom"
-import Homepage from "./pages/homepage"
+import Homepage from "./pages/Homepage"
 
 export default function App() {
   const dispatch = useDispatch()
