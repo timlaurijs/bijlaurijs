@@ -2,8 +2,29 @@
 
 .menubar {
   margin-bottom: 5%;
+  background-color: $primary;
+  width: calc(100vw - 65px);
+  margin-top: 25px;
+  margin-left: 25px;
+  padding-left: 10px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+
+  font-family: nautikblack;
+  font-size: 25px;
   a {
     display: block;
+    text-decoration: none;
+    color: #666;
+  }
+  a:visited {
+    font-style: normal;
+  }
+  a:active {
+    color: black;
+  }
+  a:hover {
+    color: white;
   }
   // width: 50%;
 }
