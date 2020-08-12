@@ -22,5 +22,6 @@ export const fetchTimelineItemsQuery = `
   "postOrder": order
   },
   seasons,
+  title
 }
 `
