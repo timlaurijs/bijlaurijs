@@ -5,7 +5,7 @@ export const FETCH_MENU_ITEMS_SUCCESS = "FETCH_MENU_ITEMS_SUCCESS"
 
 export const fetchTimelineItems = () => async (dispatch, getState) => {
   await sanityClient.fetch(fetchTimelineItemsQuery).then((data) => {
-    const clientSorted = [...data].sort((a, b) => a.postOrder - b.postOrder)
+    const clientSorted = [...data].sort((a, b) => a.title - b.title)
     dispatch(fetchTimelineItemsSuccess(clientSorted))
   })
 }

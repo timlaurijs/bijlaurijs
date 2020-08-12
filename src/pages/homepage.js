@@ -3,6 +3,7 @@ import "./Homepage.scss"
 import Menubar from "../components/Menubar"
 import BodyText from "../components/BodyText"
 import Timeline from "../components/Timeline"
+import Footer from "../components/Footer"
 
 export default function Homepage() {
   return (
@@ -12,6 +13,7 @@ export default function Homepage() {
         <BodyText />
       </div>
       <Timeline />
+      <Footer />
     </div>
   )
 }
