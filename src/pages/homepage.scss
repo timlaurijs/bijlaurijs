@@ -1,7 +1,7 @@
 @import "../style/config";
 
-.homepage {
-  position: absolute;
+.Homepage {
+  // position: absolute;
   padding: 20px;
   width: 100%;
   height: 100%;
@@ -9,7 +9,7 @@
   left: 0;
   box-sizing: border-box;
   overflow-x: hidden;
-  .content-container {
+  .menu-container {
     position: fixed;
     width: 44%;
   }

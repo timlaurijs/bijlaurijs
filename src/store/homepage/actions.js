@@ -21,7 +21,6 @@ export const fetchMenuItems = () => async (dispatch, getState) => {
     dispatch(fetchMenuItemsSuccess(data))
     //set default chapter to the 1st in the list
     dispatch(setSelectedMenuItem(data[0]._id))
-    console.log("waht is selected current chapter?", data[0]._id)
   })
 }
 const fetchMenuItemsSuccess = (data) => {
