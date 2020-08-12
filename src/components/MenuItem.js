@@ -10,35 +10,35 @@ const MenuItem = (props) => {
   const [itemHeight, setItemHeight] = useState(0)
   const [itemRef, setItemRef] = useState()
 
-  // console.log("wat is in de itemRef?", itemRef)
+  // useEffect(() => {
+  //   if (!itemRef) return
+  //   setItemHeight(itemRef.offsetHeight)
+  // }, [itemRef])
 
-  useEffect(() => {
-    if (!itemRef) return
-    setItemHeight(itemRef.offsetHeight)
-  }, [itemRef])
-
-  console.log("dit is de menuItem hoogtn", menu._id, itemHeight)
+  console.log(`menuItem order: ${menu.order}, menuItem height: ${itemHeight}`)
 
   return (
     <div
       className="MenuItem"
-      key={menu._id}
       id={menu._id}
       ref={(ref) => {
         setItemRef(ref)
       }}
     >
       {timelineItems.map((item) => {
-        // console.log(item)
+        // const clientSortedAlphabetical = [...item].sort(
+        //   (a, b) => a.title - b.title
+        // )
+
+        // console.log("what is item?", item)
         if (menu.order === item.postOrder)
           return (
             <img
               key={item._id}
               src={item.imageUrl}
               ref={(ref) => {
-                console.log("image ref offsetHeight", ref.offsetHeight)
-                // if (!itemRef) return
-                // setItemHeight(itemRef.offsetHeight)
+                if (!itemRef) return
+                setItemHeight(itemRef.offsetHeight)
               }}
             ></img>
           )
