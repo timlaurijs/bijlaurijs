@@ -1,23 +1,23 @@
 import {
-  FETCH_TIMELINE_ITEMS_SUCCESS,
+  FETCH_POSTS_SUCCESS,
   FETCH_MENU_ITEMS_SUCCESS,
-  setSelectedMenuItem,
+  setSelectedPost,
 } from "./actions.js"
 
 const initialState = {
   menuItems: [],
-  timelineItems: [],
-  setMenuItem: [],
+  posts: [],
+  selectedPost: [],
 }
 
 export default (state = initialState, { type, payload }) => {
   switch (type) {
-    case FETCH_TIMELINE_ITEMS_SUCCESS:
-      return { ...state, timelineItems: [...state.timelineItems, ...payload] }
+    case FETCH_POSTS_SUCCESS:
+      return { ...state, posts: [...state.posts, ...payload] }
     case FETCH_MENU_ITEMS_SUCCESS:
       return { ...state, menuItems: [...state.menuItems, ...payload] }
-    case "SET_SELECTED_MENU_ITEM":
-      return { ...state, setMenuItem: [...payload] }
+    case "SET_SELECTED_POST":
+      return { ...state, selectedPost: [...payload] }
 
     default:
       return state
