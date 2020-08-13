@@ -11,7 +11,7 @@ export const fetchMenuItemsQuery = `
 } 
 `
 
-export const fetchTimelineItemsQuery = `
+export const fetchPostsQuery = `
 * [_type=="afbeeldingen"] | order (postOrder, ASC){
   _id,
   ...mainImage.asset->{

@@ -1,19 +1,19 @@
 import React from "react"
 import "./BodyText.scss"
 import { useSelector } from "react-redux"
-import { selectMenuItems, selectedMenuItem } from "../store/homepage/selectors"
+import { selectMenuItems, selectedPost } from "../store/homepage/selectors"
 
 export default function BodyText() {
   const menuItems = useSelector(selectMenuItems)
-  const selectedMenu = useSelector(selectedMenuItem)
+  const selectedPostItem = useSelector(selectedPost)
 
   return (
     <div className="BodyText">
-      {menuItems.map((menuItem) => {
-        if (menuItem._id === selectedMenu[0])
+      {menuItems.map((menu) => {
+        if (menu._id === selectedPostItem[0])
           return (
-            <div key={menuItem._id}>
-              <p>{menuItem.body}</p>
+            <div key={menu._id}>
+              <p>{menu.body}</p>
             </div>
           )
       })}
