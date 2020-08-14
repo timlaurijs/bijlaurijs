@@ -1,22 +1,20 @@
 import React from "react"
 import "./BodyText.scss"
+import BlockContent from "@sanity/block-content-to-react"
 import { useSelector } from "react-redux"
-import { selectMenuItems, selectedPost } from "../store/homepage/selectors"
+import { selectCurrentMenuItem } from "../store/homepage/selectors"
 
 export default function BodyText() {
-  const menuItems = useSelector(selectMenuItems)
-  const selectedPostItem = useSelector(selectedPost)
+  const menuItem = useSelector(selectCurrentMenuItem)
 
   return (
     <div className="BodyText">
-      {menuItems.map((menu) => {
-        if (menu._id === selectedPostItem[0])
-          return (
-            <div key={menu._id}>
-              <p>{menu.body}</p>
-            </div>
-          )
-      })}
+      {menuItem &&
+        menuItem.body
+          .filter(({ _type }) => _type === "block")
+          .map((block) => (
+            <BlockContent key={menuItem.id} blocks={block} serializers={{}} />
+          ))}
     </div>
   )
 }
