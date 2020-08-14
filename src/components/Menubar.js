@@ -1,27 +1,36 @@
 import React from "react"
 import "./Menubar.scss"
-import { useDispatch, useSelector } from "react-redux"
-import { setSelectedPost } from "../store/homepage/actions"
-import { selectMenuItems } from "../store/homepage/selectors"
+import { Link } from "react-router-dom"
+import { useSelector } from "react-redux"
+import {
+  selectMenuItemData,
+  selectCurrentMenuItem,
+} from "../store/homepage/selectors"
 
 export default function Menubar() {
-  const dispatch = useDispatch()
-  const menuItems = useSelector(selectMenuItems)
-  // console.log("what are the chapter items?", menuItems)
+  const menuItems = useSelector(selectMenuItemData)
+  const currentMenuItem = useSelector(selectCurrentMenuItem)
+
+  // sets selected menuItem title to color black
+  const selectedMenuItem = (title) => {
+    if (currentMenuItem && title === currentMenuItem.title) {
+      return { color: "black" }
+    }
+  }
 
   return (
     <div className="menubar">
-      {menuItems.map((menu) => {
-        return (
-          <a
-            href={`#${menu._id}`}
-            key={menu._id}
-            onClick={() => dispatch(setSelectedPost(menu._id))}
-          >
-            {menu.title}
-          </a>
-        )
-      })}
+      {menuItems.map((item) => (
+        <Link
+          key={item.id}
+          to="/"
+          // fires callback function (scrollIntoView)
+          onClick={item.callback}
+          style={selectedMenuItem(item.title)}
+        >
+          {item.title}
+        </Link>
+      ))}
     </div>
   )
 }
