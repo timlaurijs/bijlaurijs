@@ -1,19 +1,16 @@
 export const fetchMenuItemsQuery = `
 * [_type=="post"] | order (order, ASC){
-  _id,
+  "id": _id,
+  "slug": slug.current,
   order,
   title,
-  ...body[0]{
-    ...children[0]{
-     "body": text 
-    }
-  }
+  body,
 } 
 `
 
 export const fetchPostsQuery = `
 * [_type=="afbeeldingen"] | order (postOrder, ASC){
-  _id,
+  "id": _id,
   ...mainImage.asset->{
    "imageUrl": url,
   },
