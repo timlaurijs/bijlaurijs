@@ -12,7 +12,7 @@ const { NODE_ENV, REACT_APP_SANITY_PROJECT_ID: PROJECT_ID } = process.env
 
 export const sanityClient = sanity({
   projectId: PROJECT_ID,
-  dataset: "production",
+  dataset: "production2",
   useCdn: NODE_ENV === "production",
 })
 
