@@ -1,5 +1,5 @@
 export const fetchMenuItemsQuery = `
-* [_type=="post"] | order (order, ASC){
+* [_type=="menuItem"] | order (order, ASC){
   "id": _id,
   "slug": slug.current,
   order,
@@ -9,16 +9,18 @@ export const fetchMenuItemsQuery = `
 `
 
 export const fetchPostsQuery = `
-* [_type=="afbeeldingen"] | order (postOrder, ASC){
+* [_type=="post"] | order (menuItemOrder, ASC){
   "id": _id,
   ...mainImage.asset->{
    "imageUrl": url,
   },
-  ...post->{
-  "postId": _id,
-  "postOrder": order
+  ...menuItem->{
+  "menuItemId": _id,
+  "menuItemOrder": order
   },
   seasons,
-  title
+  title,
+  order,
+  "slug": slug.current,
 }
 `
