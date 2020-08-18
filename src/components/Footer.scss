@@ -1,37 +1,72 @@
 @import "../style/config";
+.Footer {
+  min-width: 100vw;
+  min-height: 100vh;
+  .Logo {
+    position: fixed;
+    width: 40%;
+    // max-width: 400px;
+    bottom: 15px;
+    right: 0;
+    z-index: 1000;
+  }
 
-.Logo {
-  position: fixed;
-  width: 40%;
-  min-width: 400px;
-  bottom: 15px;
-  right: 0;
-  z-index: 1000;
-}
+  .Booking {
+    position: fixed;
+    bottom: 20px;
+    left: 40px;
+    z-index: 1000;
+    width: 150px;
+    img {
+      width: 100%;
+      box-shadow: 10px 10px 5px #888888;
+    }
+  }
 
-.Booking {
-  position: fixed;
-  bottom: 20px;
-  left: 40px;
-  z-index: 1000;
-  width: 150px;
-  img {
-    width: 100%;
-    box-shadow: 10px 10px 5px #888888;
+  .SocialMedia {
+    position: fixed;
+    display: block;
+    bottom: 20px;
+    left: 210px;
+    z-index: 1000;
+    width: 70px;
+
+    img {
+      width: 50%;
+      display: block;
+      margin-bottom: 10px;
+      box-shadow: 0px 0px 0px #888888;
+    }
   }
 }
 
-.SocialMedia {
-  position: fixed;
-  display: block;
-  bottom: 20px;
-  left: 210px;
-  z-index: 1000;
-  width: 70px;
+@media only screen and (max-width: 600px) {
+  .Footer {
+    min-width: 100vw;
+    min-height: 100vh;
+    .Logo {
+      position: fixed;
+      width: 65%;
+      // max-width: 400px;
+      bottom: 20px;
+      right: 15px;
+      z-index: 1000;
+    }
 
-  img {
-    width: 50%;
-    display: block;
-    margin-bottom: 10px;
+    .Booking {
+      position: fixed;
+      bottom: 10px;
+      left: 10px;
+      z-index: 1000;
+      width: 25%;
+      img {
+        width: 100%;
+        box-shadow: -3px 3px 5px #888888;
+      }
+    }
+
+    .SocialMedia {
+      visibility: hidden;
+    }
   }
 }
