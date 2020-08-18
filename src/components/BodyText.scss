@@ -2,6 +2,18 @@
 
 .BodyText {
   margin-left: 25px;
-  width: 95%;
+  width: 85%;
+  font-size: 12pt;
+  // font-size: calc(09px + 6 * ((100vw - 320px) / 680));
   // top: x;
+}
+
+@media only screen and (max-width: 600px) {
+  .BodyText {
+    margin-left: 10px;
+    width: 70%;
+    font-size: 7pt;
+    padding: 5px;
+    background-color: $secondary;
+  }
 }

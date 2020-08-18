@@ -19,3 +19,25 @@
     }
   }
 }
+
+@media only screen and (max-width: 600px) {
+  .MenuItem {
+    // margin-bottom: 5px;
+    padding-top: 0px;
+    padding-bottom: 500px;
+    &:not(:last-child) {
+      padding-bottom: 25px;
+    }
+
+    img {
+      display: block;
+      width: 100%;
+      margin: 0px;
+      padding: 0px;
+      margin-bottom: 0px;
+      &:not(:last-child) {
+        padding-bottom: 5px;
+      }
+    }
+  }
+}

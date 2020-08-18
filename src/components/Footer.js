@@ -7,26 +7,27 @@ import "./Footer.scss"
 
 const Footer = () => {
   return (
-    <div>
+    <div className="Footer">
       <img src={logo} className="Logo"></img>
 
-      <a
-        href="https://book4moor.eu/portal.php/nl/8b5a9307/calendar/bij-laurijs"
-        className="Booking"
-      >
-        <img src={booking}></img>
-      </a>
-
-      <div className="SocialMedia">
+      <div className="Booking">
         <a
-          href="https://www.instagram.com/vakantiehuis_bij_laurijs/"
+          href="https://book4moor.eu/portal.php/nl/8b5a9307/calendar/bij-laurijs"
           target="_blank"
         >
-          <img src={instagram}></img>
+          <img src={booking}></img>
         </a>
-        <a href="https://www.facebook.com/bijLaurijs/" target="_blank">
-          <img src={facebook}></img>
-        </a>
+        <div className="SocialMedia">
+          <a
+            href="https://www.instagram.com/vakantiehuis_bij_laurijs/"
+            target="_blank"
+          >
+            <img src={instagram}></img>
+          </a>
+          <a href="https://www.facebook.com/bijLaurijs/" target="_blank">
+            <img src={facebook}></img>
+          </a>
+        </div>
       </div>
     </div>
   )
