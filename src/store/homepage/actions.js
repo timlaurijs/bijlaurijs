@@ -10,7 +10,7 @@ export const UPDATE_MENU_ITEM = "UPDATE_MENU_ITEM"
 export const fetchPosts = () => async (dispatch, getState) => {
   await sanityClient.fetch(fetchPostsQuery).then((data) => {
     // filters on title (asc)
-    const sortedPosts = [...data].sort((a, b) => a.title - b.title)
+    const sortedPosts = [...data].sort((a, b) => a.order - b.order)
     dispatch(UpdatePosts(sortedPosts))
   })
 }
