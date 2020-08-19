@@ -1,25 +1,21 @@
 @import "../style/config";
 
 .Timeline {
+  .loading {
+    position: fixed;
+    top: 100px;
+    font-family: nautikbold;
+    font-size: 50pt;
+  }
+
   position: relative;
   left: 45%;
-  // padding: 25px;
   padding-left: 40px;
   padding-right: 0px;
   top: 0;
   width: 55%;
   right: 0px;
   box-sizing: border-box;
-  // .menuItem {
-  //   margin-bottom: 5px;
-  //   img {
-  //     display: inline-block;
-  //     width: 100%;
-  //     margin: 0px;
-  //     padding: 0px;
-  //     margin-bottom: 5px;
-  //   }
-  // }
   .scrolltest {
     height: 2000px;
     .test {
@@ -36,7 +32,6 @@
     padding-right: 0px;
     top: 50%;
     left: 0;
-    // margin-top: 50%;
     right: 0px;
     box-sizing: border-box;
     z-index: 0;
