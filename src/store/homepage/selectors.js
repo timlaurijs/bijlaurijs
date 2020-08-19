@@ -2,6 +2,8 @@
 export const selectMenuItems = (state) =>
   Object.values(state.homepage.menuItems)
 
+export const isLoading = (state) => state.homepage.loading
+
 // selects posts with postOrder number corresponding with menuItem.order number
 export const selectMenuItemsPosts = (menuItem) => (state) =>
   state.homepage.posts.filter((post) => post.menuItemOrder === menuItem.order)
