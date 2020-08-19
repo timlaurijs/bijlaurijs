@@ -6,6 +6,7 @@ import {
   setCurrentMenuItem,
   setMenuItemCallback,
 } from "../store/homepage/actions"
+import Map from "./Map"
 
 const Post = (props) => {
   const dispatch = useDispatch()
@@ -69,17 +70,25 @@ const Post = (props) => {
     [menuItem, postsLoaded !== posts.length]
   )
 
-  return (
-    <div className="MenuItem" ref={menuItemRef}>
-      {posts.map((post) => (
-        <img
-          key={post.id}
-          src={post.imageUrl}
-          onLoad={() => setPostsLoaded(postsLoaded + 1)}
-        ></img>
-      ))}
-    </div>
-  )
+  if (menuItem.title !== "Locatie & contact") {
+    return (
+      <div className="MenuItem" ref={menuItemRef}>
+        {posts.map((post) => (
+          <img
+            key={post.id}
+            src={post.imageUrl}
+            onLoad={() => setPostsLoaded(postsLoaded + 1)}
+          ></img>
+        ))}
+      </div>
+    )
+  } else {
+    return (
+      <div className="MenuItem" ref={menuItemRef}>
+        <Map />
+      </div>
+    )
+  }
 }
 
 export default Post
