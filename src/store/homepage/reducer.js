@@ -1,5 +1,7 @@
 import {
   UPDATE_MENU_ITEMS,
+  APP_LOADING,
+  APP_DONE_LOADING,
   UPDATE_POSTS,
   UPDATE_CURRENT_MENU_ITEM,
   UPDATE_MENU_ITEM,
@@ -9,6 +11,7 @@ const initialState = {
   menuItems: {},
   posts: [],
   currentMenuItem: undefined,
+  loading: false,
 }
 
 export default (state = initialState, { type, payload }) => {
@@ -22,6 +25,12 @@ export default (state = initialState, { type, payload }) => {
           ...payload.reduce((acc, curr) => ({ ...acc, [curr.id]: curr }), {}),
         },
       }
+
+    case APP_LOADING:
+      return { ...state, loading: true }
+
+    case APP_DONE_LOADING:
+      return { ...state, loading: false }
 
     //adds posts to store
     case UPDATE_POSTS:

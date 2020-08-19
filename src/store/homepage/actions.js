@@ -5,15 +5,22 @@ export const UPDATE_POSTS = "UPDATE_POSTS"
 export const UPDATE_MENU_ITEMS = "UPDATE_MENU_ITEMS"
 export const UPDATE_CURRENT_MENU_ITEM = "UPDATE_CURRENT_MENU_ITEM"
 export const UPDATE_MENU_ITEM = "UPDATE_MENU_ITEM"
+export const APP_LOADING = "APP_LOADING"
+export const APP_DONE_LOADING = "APP_DONE_LOADING"
 
 // fetches posts
 export const fetchPosts = () => async (dispatch, getState) => {
+  dispatch(appLoading())
   await sanityClient.fetch(fetchPostsQuery).then((data) => {
     // filters on title (asc)
     const sortedPosts = [...data].sort((a, b) => a.order - b.order)
+    dispatch(appDoneLoading())
     dispatch(UpdatePosts(sortedPosts))
   })
 }
+export const appLoading = () => ({ type: APP_LOADING })
+export const appDoneLoading = () => ({ type: APP_DONE_LOADING })
+
 const UpdatePosts = (data) => {
   return {
     type: UPDATE_POSTS,
