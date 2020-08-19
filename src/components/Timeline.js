@@ -3,7 +3,6 @@ import "./Timeline.scss"
 import { useSelector } from "react-redux"
 import { selectMenuItems, isLoading } from "../store/homepage/selectors"
 import Post from "./Post"
-import Map from "./Map"
 
 export default function Timeline() {
   const menuItems = useSelector(selectMenuItems)
@@ -15,7 +14,6 @@ export default function Timeline() {
       {menuItems.map((menuItem) => (
         <Post key={menuItem.id} menuItem={menuItem} />
       ))}
-      <Map />
     </div>
   )
 }
