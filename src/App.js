@@ -3,7 +3,7 @@ import "./App.scss"
 import { useDispatch } from "react-redux"
 import { fetchPosts, fetchMenuItems } from "./store/homepage/actions"
 import { Switch, Route } from "react-router-dom"
-import Homepage from "./pages/Homepage"
+import Home from "./pages/Home"
 
 export default function App() {
   const dispatch = useDispatch()
@@ -15,7 +15,7 @@ export default function App() {
 
   return (
     <Switch>
-      <Route exact path="/" component={Homepage} />
+      <Route exact path="/" component={Home} />
     </Switch>
   )
 }

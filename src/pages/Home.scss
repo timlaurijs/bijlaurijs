@@ -1,6 +1,6 @@
 @import "../style/config";
 
-.Homepage {
+.Home {
   // position: absolute;
   // padding: 15px;
   padding-right: 0px;
@@ -17,7 +17,7 @@
 }
 
 @media only screen and (max-width: 600px) {
-  .Homepage {
+  .Home {
     .menu-container {
       position: fixed;
       width: 100%;
