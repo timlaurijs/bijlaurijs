@@ -5,6 +5,7 @@ import {
   UPDATE_POSTS,
   UPDATE_CURRENT_MENU_ITEM,
   UPDATE_MENU_ITEM,
+  UPDATE_SEASON,
 } from "./actions.js"
 
 const initialState = {
@@ -12,6 +13,7 @@ const initialState = {
   posts: [],
   currentMenuItem: undefined,
   loading: false,
+  currentSeason: "year",
 }
 
 export default (state = initialState, { type, payload }) => {
@@ -55,6 +57,13 @@ export default (state = initialState, { type, payload }) => {
           },
         },
       }
+
+    case UPDATE_SEASON:
+      return {
+        ...state,
+        currentSeason: payload,
+      }
+
     default:
       return state
   }

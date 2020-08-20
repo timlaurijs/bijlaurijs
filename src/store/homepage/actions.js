@@ -7,6 +7,7 @@ export const UPDATE_CURRENT_MENU_ITEM = "UPDATE_CURRENT_MENU_ITEM"
 export const UPDATE_MENU_ITEM = "UPDATE_MENU_ITEM"
 export const APP_LOADING = "APP_LOADING"
 export const APP_DONE_LOADING = "APP_DONE_LOADING"
+export const UPDATE_SEASON = "UPDATE_SEASON"
 
 // fetches posts
 export const fetchPosts = () => async (dispatch, getState) => {
@@ -18,6 +19,7 @@ export const fetchPosts = () => async (dispatch, getState) => {
     dispatch(UpdatePosts(sortedPosts))
   })
 }
+
 export const appLoading = () => ({ type: APP_LOADING })
 export const appDoneLoading = () => ({ type: APP_DONE_LOADING })
 
@@ -73,5 +75,16 @@ const updateMenuItem = (id, data) => {
   return {
     type: UPDATE_MENU_ITEM,
     payload: { id, data },
+  }
+}
+
+// sets new season
+export const setSeason = (data) => (dispatch, getState) => {
+  dispatch(updateSeason(data))
+}
+const updateSeason = (data) => {
+  return {
+    type: UPDATE_SEASON,
+    payload: data,
   }
 }

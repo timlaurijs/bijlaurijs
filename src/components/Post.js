@@ -1,7 +1,7 @@
 import React, { useState, useEffect, useCallback } from "react"
 import "./Post.scss"
 import { useSelector, useDispatch } from "react-redux"
-import { selectMenuItemsPosts } from "../store/homepage/selectors"
+import { selectMenuItemsPosts, selectSeason } from "../store/homepage/selectors"
 import {
   setCurrentMenuItem,
   setMenuItemCallback,
@@ -11,8 +11,11 @@ import Map from "./Map"
 const Post = (props) => {
   const dispatch = useDispatch()
   const { menuItem } = props
+
   // selects posts of corresponding menuItem
-  const posts = useSelector(selectMenuItemsPosts(menuItem))
+  const season = useSelector(selectSeason)
+  const posts = useSelector(selectMenuItemsPosts(menuItem, season))
+
   // local states that store DOM node info
   const [menuItemOffsetTop, setMenuItemOffsetTop] = useState(0)
   const [menuItemOffsetBottom, setMenuItemOffsetBottom] = useState(0)
