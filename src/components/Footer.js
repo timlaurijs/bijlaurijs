@@ -10,13 +10,15 @@ const Footer = () => {
     <div className="Footer">
       <img src={logo} className="Logo"></img>
 
-      <div className="Booking">
+      <div className="Links">
         <a
           href="https://book4moor.eu/portal.php/nl/8b5a9307/calendar/bij-laurijs"
           target="_blank"
+          className="Booking"
         >
           <img src={booking}></img>
         </a>
+
         <div className="SocialMedia">
           <a
             href="https://www.instagram.com/vakantiehuis_bij_laurijs/"

@@ -1,7 +1,7 @@
 @import "../style/config";
 
 .menubar {
-  margin-bottom: 5%;
+  margin-bottom: 0;
   background-color: $primary;
   width: calc(100vw - 65px);
   margin-top: 25px;
@@ -30,17 +30,37 @@
   // width: 50%;
 }
 
+@media only screen and (max-width: 850px) {
+  .menubar {
+    font-size: 15pt;
+  }
+}
 @media only screen and (max-width: 600px) {
   .menubar {
-    margin-bottom: 5%;
-    background-color: $primary;
-    // width: calc(70vw);
-    width: calc(100% - 25px);
+    margin-bottom: 0;
+    background-color: $primaryTrans;
+    width: 75%;
     margin-top: 10px;
     margin-left: 10px;
-    padding-left: 5px;
-    padding-top: 8px;
-    padding-bottom: 5px;
+    padding: 5px;
     font-size: 10pt;
+    a:hover {
+      color: #666;
+    }
+  }
+}
+
+@media only screen and (max-height: 400px) and (orientation: landscape) {
+  .menubar {
+    margin-bottom: 0;
+    background-color: $primaryTrans;
+    width: 85%;
+    margin-top: 10px;
+    margin-left: 10px;
+    padding: 5px;
+    font-size: 8pt;
+    a:hover {
+      color: #666;
+    }
   }
 }

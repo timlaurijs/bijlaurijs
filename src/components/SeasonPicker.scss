@@ -1,7 +1,36 @@
 @import "../style/config";
 
 .SeasonPicker {
-  // position: relative;
-  margin-left: 35px;
+  margin-left: 25px;
   margin-bottom: 5%;
+  font-size: 25pt;
+  text-align: left;
+  z-index: 9999;
+
+  .all {
+    margin-right: 30px;
+  }
+
+  button {
+    display: inline;
+    margin-right: 10px;
+    margin-top: 5px;
+    vertical-align: top;
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  .SeasonPicker {
+    position: fixed;
+    visibility: hidden;
+    bottom: 0;
+  }
+}
+
+@media only screen and (max-height: 400px) and (orientation: landscape) {
+  .SeasonPicker {
+    position: fixed;
+    visibility: hidden;
+    bottom: 0;
+  }
 }

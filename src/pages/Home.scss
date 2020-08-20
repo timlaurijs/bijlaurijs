@@ -21,8 +21,17 @@
     .menu-container {
       position: fixed;
       width: 100%;
+      z-index: 999;
+    }
+  }
+}
+@media only screen and (max-height: 400px) and (orientation: landscape) {
+  .Home {
+    .menu-container {
+      position: fixed;
+      width: 55%;
+      z-index: 999;
       // height: 40%;
-      z-index: 100;
       // background-color: $secondary;
     }
   }
