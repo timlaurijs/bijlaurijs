@@ -13,7 +13,7 @@ const initialState = {
   posts: [],
   currentMenuItem: undefined,
   loading: false,
-  currentSeason: "year",
+  currentSeason: "",
 }
 
 export default (state = initialState, { type, payload }) => {

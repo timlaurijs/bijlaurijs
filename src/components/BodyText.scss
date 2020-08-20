@@ -1,19 +1,41 @@
 @import "../style/config";
 
 .BodyText {
-  margin-left: 25px;
-  width: 85%;
+  margin-left: 35px;
+  width: 75%;
   font-size: 12pt;
   // font-size: calc(09px + 6 * ((100vw - 320px) / 680));
   // top: x;
 }
 
+@media only screen and (max-width: 1200px) {
+  .BodyText {
+    font-size: 11pt;
+  }
+}
+
+@media only screen and (max-width: 1000px) {
+  .BodyText {
+    font-size: 10pt;
+  }
+}
+
 @media only screen and (max-width: 600px) {
   .BodyText {
     margin-left: 10px;
-    width: 70%;
+    width: 75%;
+    font-size: 8pt;
+    padding: 5px;
+    background-color: $secondaryTrans;
+  }
+}
+
+@media only screen and (max-height: 400px) and (orientation: landscape) {
+  .BodyText {
+    margin-left: 10px;
+    width: 85%;
     font-size: 7pt;
     padding: 5px;
-    background-color: $secondary;
+    background-color: $secondaryTrans;
   }
 }

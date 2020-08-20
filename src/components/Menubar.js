@@ -5,11 +5,13 @@ import { useSelector } from "react-redux"
 import {
   selectMenuItemData,
   selectCurrentMenuItem,
+  selectSeason,
 } from "../store/homepage/selectors"
 
 export default function Menubar() {
   const menuItems = useSelector(selectMenuItemData)
   const currentMenuItem = useSelector(selectCurrentMenuItem)
+  const season = useSelector(selectSeason)
 
   // sets selected menuItem title to color black
   const selectedMenuItem = (title) => {
@@ -18,8 +20,16 @@ export default function Menubar() {
     }
   }
 
+  const seasonStyling = (season) => {
+    if (season !== "year") {
+      return { visibility: "hidden" }
+    } else {
+      return { visibility: "visible" }
+    }
+  }
+
   return (
-    <div className="menubar">
+    <div className="menubar" style={seasonStyling(season)}>
       {menuItems.map((item) => (
         <Link
           key={item.id}

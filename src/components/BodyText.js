@@ -2,13 +2,26 @@ import React from "react"
 import "./BodyText.scss"
 import BlockContent from "@sanity/block-content-to-react"
 import { useSelector } from "react-redux"
-import { selectCurrentMenuItem } from "../store/homepage/selectors"
+import {
+  selectCurrentMenuItem,
+  selectSeason,
+} from "../store/homepage/selectors"
 
 export default function BodyText() {
   const menuItem = useSelector(selectCurrentMenuItem)
 
+  const season = useSelector(selectSeason)
+
+  const seasonStyling = (season) => {
+    if (season !== "year") {
+      return { visibility: "hidden" }
+    } else {
+      return { visibility: "visible" }
+    }
+  }
+
   return (
-    <div className="BodyText">
+    <div className="BodyText" style={seasonStyling(season)}>
       {menuItem &&
         menuItem.body
           .filter(({ _type }) => _type === "block")

@@ -1,14 +1,14 @@
 import React from "react"
-import "./Homepage.scss"
+import "./Home.scss"
 import Menubar from "../components/Menubar"
 import BodyText from "../components/BodyText"
 import Timeline from "../components/Timeline"
 import Footer from "../components/Footer"
 import SeasonPicker from "../components/SeasonPicker"
 
-export default function Homepage() {
+export default function Home() {
   return (
-    <div className="Homepage">
+    <div className="Home">
       <div className="menu-container">
         <Menubar />
         <SeasonPicker />

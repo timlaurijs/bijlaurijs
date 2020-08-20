@@ -72,10 +72,25 @@ const Post = (props) => {
     // checks all posts are rendered
     [menuItem, postsLoaded !== posts.length]
   )
+  const seasonStyling = (season) => {
+    if (season !== "year") {
+      return { paddingTop: "0px" }
+    } else {
+      return {}
+    }
+  }
+
+  const seasonStylingMap = (season) => {
+    if (season !== "year") {
+      return { paddingTop: "0px", paddingBottom: "0px" }
+    } else {
+      return {}
+    }
+  }
 
   if (menuItem.title !== "Locatie & contact") {
     return (
-      <div className="MenuItem" ref={menuItemRef}>
+      <div className="MenuItem" ref={menuItemRef} style={seasonStyling(season)}>
         {posts.map((post) => (
           <img
             key={post.id}
@@ -87,7 +102,11 @@ const Post = (props) => {
     )
   } else {
     return (
-      <div className="MenuItem" ref={menuItemRef}>
+      <div
+        className="MenuItem"
+        ref={menuItemRef}
+        style={seasonStylingMap(season)}
+      >
         <Map />
       </div>
     )
