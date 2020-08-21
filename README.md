@@ -17,7 +17,7 @@
 - [CMS repo](#CMS-repo)
 
 ## App Demo
-![iphone version](https://im6.ezgif.com/tmp/ezgif-6-c7c849ce869b.gif "recorden od iphone 11").  
+![iphone version](https://im6.ezgif.com/tmp/ezgif-6-1ccfd49a7ee6.gif "recorden od iphone 11").  
 [bijlaurijs develop mode](https://bijlaurijs.timlaurijs.xyz/). 
 
 
