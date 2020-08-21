@@ -93,7 +93,7 @@ Go to my [Project board](https://github.com/timlaurijs/bijlaurijs-client/project
 ![model front]()
 
 ## Used Technologies
-🦴 are files from my backend I end up not using
+🦴 highlight files from my backend I ended up not using because I switched to Sanity CMS
 
 - [React for UI building](https://github.com/timlaurijs/bijlaurijs-client/blob/development/src/App.js)
 - [Redux for state management](https://github.com/timlaurijs/bijlaurijs-client/tree/development/src/store/homepage)
@@ -102,6 +102,7 @@ Go to my [Project board](https://github.com/timlaurijs/bijlaurijs-client/project
 - [Authentication](https://github.com/timlaurijs/bijlaurijs-backend/blob/development/routers/auth.js) 🦴
 - [Express as web app framework](https://github.com/timlaurijs/bijlaurijs-backend/blob/development/index.js) 🦴
 - [Datamodels](https://github.com/timlaurijs/bijlaurijs-backend/tree/development/models) 🦴
+- [Log in page](https://github.com/timlaurijs/bijlaurijs-client/blob/featur-login-page/src/pages/login.js)🦴
 
 ## Git version control
 
