@@ -7,7 +7,8 @@
 
 @media only screen and (max-width: 600px) {
   .Mapbox {
-    visibility: hidden;
+    // visibility: hidden;
+    height: 40vh;
   }
 }
 // @media only screen and (orientation: landscape) and (max-device-width: 750px) {

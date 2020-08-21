@@ -82,7 +82,7 @@ const Post = (props) => {
 
   const seasonStylingMap = (season) => {
     if (season !== "year") {
-      return { paddingTop: "0px", paddingBottom: "0px" }
+      return { visibility: "hidden", maxHeight: "0px", padding: "0" }
     } else {
       return {}
     }
@@ -102,11 +102,7 @@ const Post = (props) => {
     )
   } else {
     return (
-      <div
-        className="MenuItem"
-        ref={menuItemRef}
-        style={seasonStylingMap(season)}
-      >
+      <div className="Map" ref={menuItemRef} style={seasonStylingMap(season)}>
         <Map />
       </div>
     )

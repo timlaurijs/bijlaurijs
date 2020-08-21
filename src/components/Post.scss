@@ -2,10 +2,9 @@
 
 .MenuItem {
   padding-top: 25px;
-  padding-bottom: 500px;
-  &:not(:last-child) {
-    padding-bottom: 0;
-  }
+  padding-bottom: 0px;
+  // &:not(:last-child) {
+  // }
 
   img {
     display: block;
@@ -19,14 +18,18 @@
   }
 }
 
+.Map {
+  padding-top: 25px;
+  padding-bottom: 1000px;
+}
 @media only screen and (max-width: 600px) {
   .MenuItem {
     // margin-bottom: 5px;
     padding-top: 0px;
-    padding-bottom: 500px;
-    &:not(:last-child) {
-      padding-bottom: 150px;
-    }
+    padding-bottom: 25px;
+    // &:not(:last-child) {
+    //   padding-bottom: 25px;
+    // }
 
     img {
       display: block;
@@ -39,6 +42,28 @@
       }
     }
   }
+  .Map {
+    padding-top: 0;
+    padding-bottom: 1000px;
+  }
 }
 @media only screen and (max-height: 400px) and (orientation: landscape) {
+  .MenuItem {
+    padding-top: 10px;
+    padding-bottom: 500px;
+    &:not(:last-child) {
+      padding-bottom: 0;
+    }
+
+    img {
+      display: block;
+      width: 100%;
+      margin: 0px;
+      padding: 0px;
+      margin-bottom: 0px;
+      &:not(:last-child) {
+        padding-bottom: 5px;
+      }
+    }
+  }
 }
