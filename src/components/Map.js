@@ -22,8 +22,8 @@ const Map = () => {
       .setLngLat([6.64136, 52.006236])
       .addTo(map)
 
-    // map.addControl(new mapboxgl.NavigationControl(), "bottom-right")
-    // return () => map.remove()
+    map.addControl(new mapboxgl.NavigationControl(), "bottom-right")
+    return () => map.remove()
   }, [])
 
   useEffect(() => {}, [season])
