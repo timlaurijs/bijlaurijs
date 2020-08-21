@@ -78,26 +78,27 @@ As the vacation-home owner I want the updated website to look/behave similar to 
 
 ## Project board
 
-Go to my [Project board]()
+Go to my [Project board](https://github.com/timlaurijs/bijlaurijs-client/projects/1)
 
 ## Wireframe
 
-![model front]()
-![model front]()
+![model front](https://github.com/timlaurijs/bijlaurijs-client/blob/development/Readme-assets/homepage.png "model front")
+![model admin](https://github.com/timlaurijs/bijlaurijs-client/blob/development/Readme-assets/admin%20page.png "model admin")
 
 ## Datamodel
 
 ![model front]()
 
 ## Used Technologies
+🦴 are files from my backend I end up not using
 
-- [React for UI building]()
-- [Redux for state management]()
-- [Sanity for CMS schamas]()
-- [useCallback for DOM node reference]()
-- [Authentication]()
-- [Express as web app framework]()
-- [Datamodels]()
+- [React for UI building](https://github.com/timlaurijs/bijlaurijs-client/blob/development/src/App.js)
+- [Redux for state management](https://github.com/timlaurijs/bijlaurijs-client/tree/development/src/store/homepage)
+- [Sanity for CMS schamas](https://github.com/timlaurijs/bijlaurijs-cms/tree/development/schemas)
+- [useCallback for DOM node reference](https://github.com/timlaurijs/bijlaurijs-client/blob/31dc44ea02620b662a7799d26ececccf714a501e/src/components/Post.js#L51-L74)
+- [Authentication](https://github.com/timlaurijs/bijlaurijs-backend/blob/development/routers/auth.js) 🦴
+- [Express as web app framework](https://github.com/timlaurijs/bijlaurijs-backend/blob/development/index.js) 🦴
+- [Datamodels](https://github.com/timlaurijs/bijlaurijs-backend/tree/development/models) 🦴
 
 ## Git version control
 
