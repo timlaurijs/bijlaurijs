@@ -29,8 +29,22 @@
 
 @media only screen and (max-height: 400px) and (orientation: landscape) {
   .SeasonPicker {
-    // position: fixed;
-    // visibility: hidden;
-    // bottom: 0;
+    margin-left: 10px;
+    margin-bottom: 5px;
+    text-align: left;
+    z-index: 9999;
+    font-size: 8pt;
+
+    .all {
+      margin-right: 30px;
+    }
+
+    button {
+      font-size: 8pt;
+      display: inline;
+      margin-right: 25px;
+      margin-top: 5px;
+      vertical-align: top;
+    }
   }
 }
