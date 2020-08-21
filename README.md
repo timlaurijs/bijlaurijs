@@ -1,68 +1,115 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# Bij Laurijs, _vacation in the Achterhoek_
 
-## Available Scripts
+**bijlaurijs** is the digital business card of the picturesque vacation chalet, camper and its owners, located in rural Gelderland. Merging an old site with its visual identity, concept and narrative but outdated code into a new form, making it ready to survive the coming years of the internet. With new tools to tell new stories and the possibility to update old ones, **bijlaurijs** now is future proof. It comes with a dad-proof, admin-friendly CMS, enabling the admin to add/edit menu items, text and images.
 
-In the project directory, you can run:
+## Table of contents
 
-### `npm start`
+- [App Demo](#App-demo)
+- [‘Bij Laurijs’ concept](#‘Bij-Laurijs’-concept)
+- [The Fossil](#The-Fossil)
+- [Goals for this project](#Goals-for-this-project)
+- [User stories](#User-stories)
+- [Wireframe](#Wireframe)
+- [Project board](#Project-board)
+- [Used technologies](#Used-technologies)
+- [Datamodel](#Datamodel)
+- [Git version control](#Git-version-control)
+- [CMS repo](#CMS-repo)
 
-Runs the app in the development mode.<br />
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+## App Demo
 
-The page will reload if you make edits.<br />
-You will also see any lint errors in the console.
+[bijlaurijs develop mode](https://www.bijlaurijs.timlaurijs.xyz)
 
-### `npm test`
+## ‘Bij Laurijs’ concept
 
-Launches the test runner in the interactive watch mode.<br />
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+The idea was to have an app that doesn’t consist of any foldable menu items or hidden pages, focusing on a clear but unique visual experience. Trying to portrait the beauty of the property a timeline of images, whilst keeping a personal feel.
+All visual identity and decisions were made around 2017-2018, I tried my best to keep the old styling intact.
 
-### `npm run build`
+## The Fossil
 
-Builds the app for production to the `build` folder.<br />
-It correctly bundles React in production mode and optimizes the build for the best performance.
+[bijlaurijs.nl original website](https://www.bijlaurijs.nl)
 
-The build is minified and the filenames include the hashes.<br />
-Your app is ready to be deployed!
+I have rebuild the website for my dads vacation home rental I made a few years back, hardcoded using html, css and (borrowed) jquery. I wanted to make the website ‘future proof’ and dynamic, so my dad can manage its content himself. Also the website had to become responsive for mobile users, since the current website wasn’t that mobile-friendly.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+## Goals for this project
 
-### `npm run eject`
+The goal of this project is to build an app to showcase what I have learned the past few weeks, while also exploring new possibilities to pursue personal interests using my newly learned tools.
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+- Practice building a full-stack app
+- Build and deploy a working version in 2(\*3) weeks
+- Translating old logic to new logic
+- Showcasing and documenting process using:
+  - Wireframes to visualize a goal
+  - Clear user stories
+  - Clear to do hierarchy
+  - Resolute git version control
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+## User stories
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+As the vacation-home owner I want the updated website to look/behave similar to the old website (www.bijlaurijs.nl) containing the following characteristics:
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+- App has a scrollable image timeline on the right.
+- App has a static menu on the left with the following menu items:
+  - Vakantiehuis bij Laurijs. Welkom!
+  - Tot 4 of 6 gasten + baby. En de hond mag mee
+  - Binnen bij Laurijs
+  - Buiten bij Laurijs
+  - De Achterhoek
+  - Inhoudsopgave
+  - Locatie & contact
+    (In consultation menu items may be merged/added/changed)
+  - When you click an item from the menu bar you will go to its place in the scrollbar.
+  - App has a button with: “book now”, if clicked gets redirected to a booking page.
+- As the vacation-home owner I want to be able to post/edit new menu items, text or images on an admin page.
+- As the vacation-home owner I want the vacation-home guest to be able to submit pictures using an emailed invitation-link just once, after submitting the link it should not be valid anymore.
+- As the vacation-home owner I want to receive photos submitted by guests to review before I post them on the website.
 
-## Learn More
+- As a website visitor I want the website to work on both the desktop and mobile version.
+- As a website visitor I want to be able to filter images on the season they are taken (winter, spring, summer, autumn)
+- As a website visitor I want some stylistic elements to change when a specific season is selected.
+- As a website visitor I want the map to focus on the desired item when I click that item in the list of surrounding activities.
+- As a website visitor I want to see a map containing icons of all the listed activities.
+- As a website visitor I want to see a list of activities in the surrounding area (walk/bike trails, musea, bars/restaurants)
+- As a website visitor I want to view the latest posts from facebook/instagram.
+- As a website visitor I want to be able to view guest-submitted pictures.
+- As a website visitor I want to select a Night/Day mode
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+- As a vacation-home guest I want, after I visited the vacation-home, to receive an email containing an invitation to upload pictures I made at/around the vacation-home and (optional) to write a review
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+## Project board
 
-### Code Splitting
+Go to my [Project board]()
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/code-splitting
+## Wireframe
 
-### Analyzing the Bundle Size
+![model front]()
+![model front]()
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size
+## Datamodel
 
-### Making a Progressive Web App
+![model front]()
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app
+## Used Technologies
 
-### Advanced Configuration
+- [React for UI building]()
+- [Redux for state management]()
+- [Sanity for CMS schamas]()
+- [useCallback for DOM node reference]()
+- [Authentication]()
+- [Express as web app framework]()
+- [Datamodels]()
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/advanced-configuration
+## Git version control
 
-### Deployment
+examples of a pull request:
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/deployment
+- [Scroll event handler](https://github.com/timlaurijs/bijlaurijs-client/pull/12)
+- [Styling](https://github.com/timlaurijs/bijlaurijs-client/pull/19)
 
-### `npm run build` fails to minify
+## CMS repo
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
+Go to my [CMS repo](https://github.com/timlaurijs/bijlaurijs-cms)
+
+## Backend repo
+
+Go to my [Backend repo](https://github.com/timlaurijs/bijlaurijs-backend)
