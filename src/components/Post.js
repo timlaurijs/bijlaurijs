@@ -70,7 +70,7 @@ const Post = (props) => {
       dispatch(setMenuItemCallback(menuItem, scrollCallback))
     },
     // checks all posts are rendered
-    [postsLoaded !== posts.length]
+    [menuItem, postsLoaded !== posts.length]
   )
   const seasonStyling = (season) => {
     if (season !== "year") {
@@ -100,14 +100,12 @@ const Post = (props) => {
         ))}
       </div>
     )
-  } else if (menuItem.title === "Locatie & contact") {
+  } else {
     return (
       <div className="Map" ref={menuItemRef} style={seasonStylingMap(season)}>
         <Map />
       </div>
     )
-  } else {
-    return null
   }
 }
 
