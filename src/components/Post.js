@@ -70,7 +70,7 @@ const Post = (props) => {
       dispatch(setMenuItemCallback(menuItem, scrollCallback))
     },
     // checks all posts are rendered
-    [menuItem, postsLoaded !== posts.length]
+    [postsLoaded !== posts.length]
   )
   const seasonStyling = (season) => {
     if (season !== "year") {
