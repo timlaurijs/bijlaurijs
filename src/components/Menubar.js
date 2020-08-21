@@ -28,38 +28,20 @@ export default function Menubar() {
     }
   }
 
-  // console.log(menuItems.length)
-
   return (
     <div className="menubar" style={seasonStyling(season)}>
       {menuItems.map((item) => {
-        if (item.order < menuItems.length) {
-          console.log("menuItem rendered first:", item.order)
-          return (
-            <Link
-              key={item.id}
-              to="/"
-              // fires callback function (scrollIntoView)
-              onClick={item.callback}
-              style={selectedMenuItem(item.title)}
-            >
-              {item.title}
-            </Link>
-          )
-        } else if (item.order === menuItems.length) {
-          console.log("menuItem rendered last:", item.order)
-          return (
-            <Link
-              key={item.id}
-              to="/"
-              // fires callback function (scrollIntoView)
-              onClick={item.callback}
-              style={selectedMenuItem(item.title)}
-            >
-              {item.title}
-            </Link>
-          )
-        }
+        return (
+          <Link
+            key={item.id}
+            to="/"
+            // fires callback function (scrollIntoView)
+            onClick={item.callback}
+            style={selectedMenuItem(item.title)}
+          >
+            {item.title}
+          </Link>
+        )
       })}
     </div>
   )
