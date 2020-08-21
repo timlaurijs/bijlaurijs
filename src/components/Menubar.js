@@ -31,6 +31,7 @@ export default function Menubar() {
   return (
     <div className="menubar" style={seasonStyling(season)}>
       {menuItems.map((item) => {
+        console.log("menuItem render order:", item.order)
         return (
           <Link
             key={item.id}
