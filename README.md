@@ -18,7 +18,7 @@
 
 ## App Demo
 
-[bijlaurijs develop mode](https://www.bijlaurijs.timlaurijs.xyz)
+[bijlaurijs develop mode](https://bijlaurijs.timlaurijs.xyz/)
 
 ## ‘Bij Laurijs’ concept
 
