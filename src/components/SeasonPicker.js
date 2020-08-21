@@ -16,49 +16,81 @@ const SeasonPicker = () => {
     }
   }
 
-  return (
-    <div className="SeasonPicker" style={seasonStyling(season)}>
-      {/* <label htmlFor="seasons">Selecteer een seizoen </label> */}
-      {/* <select onChange={(event) => dispatch(setSeason(event.target.value))}> */}
-      <button
-        style={seasonStyling(season)}
-        onClick={(event) => dispatch(setSeason(event.target.value))}
-        value="year"
-        className="all"
-      >
-        ☃️ 🌱 ☀️ 🍂
-      </button>
-      <button
-        style={seasonStyling(season)}
-        onClick={(event) => dispatch(setSeason(event.target.value))}
-        value="winter"
-      >
-        ☃️
-      </button>
-      <button
-        style={seasonStyling(season)}
-        onClick={(event) => dispatch(setSeason(event.target.value))}
-        value="spring"
-      >
-        🌱
-      </button>
-      <button
-        style={seasonStyling(season)}
-        onClick={(event) => dispatch(setSeason(event.target.value))}
-        value="summer"
-      >
-        ☀️
-      </button>
-      <button
-        style={seasonStyling(season)}
-        onClick={(event) => dispatch(setSeason(event.target.value))}
-        value="autumn"
-      >
-        🍂
-      </button>
-      {/* </select> */}
-    </div>
-  )
+  if (season !== "year") {
+    return (
+      <div className="SeasonPicker" style={seasonStyling(season)}>
+        <button
+          style={seasonStyling(season)}
+          onClick={(event) => dispatch(setSeason(event.target.value))}
+          value="year"
+          className="all"
+        >
+          ☃️ 🌱 ☀️ 🍂
+        </button>
+        <button
+          style={seasonStyling(season)}
+          onClick={(event) => dispatch(setSeason(event.target.value))}
+          value="winter"
+        >
+          ☃️
+        </button>
+        <button
+          style={seasonStyling(season)}
+          onClick={(event) => dispatch(setSeason(event.target.value))}
+          value="spring"
+        >
+          🌱
+        </button>
+        <button
+          style={seasonStyling(season)}
+          onClick={(event) => dispatch(setSeason(event.target.value))}
+          value="summer"
+        >
+          ☀️
+        </button>
+        <button
+          style={seasonStyling(season)}
+          onClick={(event) => dispatch(setSeason(event.target.value))}
+          value="autumn"
+        >
+          🍂
+        </button>
+      </div>
+    )
+  } else {
+    return (
+      <div className="SeasonPicker" style={seasonStyling(season)}>
+        <button
+          style={seasonStyling(season)}
+          onClick={(event) => dispatch(setSeason(event.target.value))}
+          value="winter"
+        >
+          ☃️
+        </button>
+        <button
+          style={seasonStyling(season)}
+          onClick={(event) => dispatch(setSeason(event.target.value))}
+          value="spring"
+        >
+          🌱
+        </button>
+        <button
+          style={seasonStyling(season)}
+          onClick={(event) => dispatch(setSeason(event.target.value))}
+          value="summer"
+        >
+          ☀️
+        </button>
+        <button
+          style={seasonStyling(season)}
+          onClick={(event) => dispatch(setSeason(event.target.value))}
+          value="autumn"
+        >
+          🍂
+        </button>
+      </div>
+    )
+  }
 }
 
 export default SeasonPicker
