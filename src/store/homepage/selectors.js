@@ -25,10 +25,11 @@ export const selectMenuItemsPosts = (menuItem, season) => (state) => {
 // create array from object of menuItemData, selects id, title, slug, callbackFn
 export const selectMenuItemData = (state) =>
   Object.values(state.homepage.menuItems).map(
-    ({ id, title, slug, callback }) => ({
+    ({ id, title, slug, order, callback }) => ({
       id,
       title,
       slug,
+      order,
       callback,
     })
   )
