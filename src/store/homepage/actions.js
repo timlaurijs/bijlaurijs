@@ -33,9 +33,10 @@ const UpdatePosts = (data) => {
 // fetches menuItems
 export const fetchMenuItems = () => async (dispatch, getState) => {
   await sanityClient.fetch(fetchMenuItemsQuery).then((data) => {
-    dispatch(updateMenuItems(data))
+    const sortedMenuItems = [...data].sort((a, b) => a.order - b.order)
+    dispatch(updateMenuItems(sortedMenuItems))
     // set selected menuItem to the 1st in the list
-    dispatch(setCurrentMenuItem(data[0]))
+    dispatch(setCurrentMenuItem(sortedMenuItems[0]))
   })
 }
 const updateMenuItems = (data) => {

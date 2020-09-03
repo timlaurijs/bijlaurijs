@@ -16,6 +16,8 @@
   width: 55%;
   right: 0px;
   box-sizing: border-box;
+  overflow-x: hidden;
+  overflow-y: hidden;
   .scrolltest {
     height: 2000px;
     .test {

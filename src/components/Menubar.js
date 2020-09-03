@@ -30,17 +30,20 @@ export default function Menubar() {
 
   return (
     <div className="menubar" style={seasonStyling(season)}>
-      {menuItems.map((item) => (
-        <Link
-          key={item.id}
-          to="/"
-          // fires callback function (scrollIntoView)
-          onClick={item.callback}
-          style={selectedMenuItem(item.title)}
-        >
-          {item.title}
-        </Link>
-      ))}
+      {menuItems.map((item) => {
+        console.log("menuItem render order:", item.order)
+        return (
+          <Link
+            key={item.id}
+            to="/"
+            // fires callback function (scrollIntoView)
+            onClick={item.callback}
+            style={selectedMenuItem(item.title)}
+          >
+            {item.title}
+          </Link>
+        )
+      })}
     </div>
   )
 }

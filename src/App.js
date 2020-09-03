@@ -20,8 +20,8 @@ export default function App() {
   }, [season])
 
   useEffect(() => {
-    dispatch(fetchPosts())
     dispatch(fetchMenuItems())
+    dispatch(fetchPosts())
     dispatch(setSeason("year"))
   }, [dispatch])
 
