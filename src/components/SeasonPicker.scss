@@ -15,7 +15,29 @@
     display: inline;
     margin-right: 10px;
     margin-top: 5px;
-    vertical-align: top;
+    vertical-align: bottom;
+    letter-spacing: 55;
+  }
+  button:hover {
+    background-color: green;
+  }
+
+  p {
+    font-size: 10pt;
+    font-weight: bold;
+    display: inline;
+    margin-right: 10px;
+    margin-top: 5px;
+    vertical-align: bottom;
+  }
+
+  .seasonName {
+    font-size: 12pt;
+    font-weight: bold;
+    display: inline;
+    margin-top: 3px;
+    margin-bottom: 3px;
+    vertical-align: bottom;
   }
 }
 
