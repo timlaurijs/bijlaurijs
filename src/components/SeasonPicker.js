@@ -1,4 +1,4 @@
-import React from "react"
+import React, { useState } from "react"
 import "./SeasonPicker.scss"
 import { useDispatch, useSelector } from "react-redux"
 import { setSeason } from "../store/homepage/actions"
@@ -16,9 +16,37 @@ const SeasonPicker = () => {
     }
   }
 
+  const seasonColor = (season) => {
+    if (season === "spring") {
+      return {
+        color: "#468840",
+      }
+    } else if (season === "summer") {
+      return {
+        color: "#F8A30F",
+      }
+    } else if (season === "autumn") {
+      return {
+        color: "#F58417",
+      }
+    } else {
+      return {
+        color: "#3379b2",
+      }
+    }
+  }
+
+  const seasonName = (season) => {
+    if (season === "winter") return "Winter"
+    else if (season === "spring") return "Lente"
+    else if (season === "summer") return "Zomer"
+    else if (season === "autumn") return "Herfst"
+  }
+
   if (season !== "year") {
     return (
       <div className="SeasonPicker" style={seasonStyling(season)}>
+        <p> Laat alle jaargetijde zien</p>
         <button
           style={seasonStyling(season)}
           onClick={(event) => dispatch(setSeason(event.target.value))}
@@ -27,6 +55,9 @@ const SeasonPicker = () => {
         >
           ☃️ 🌱 ☀️ 🍂
         </button>
+        <p style={seasonColor(season)} className="seasonName">
+          {seasonName(season)}
+        </p>
         <button
           style={seasonStyling(season)}
           onClick={(event) => dispatch(setSeason(event.target.value))}
@@ -88,6 +119,7 @@ const SeasonPicker = () => {
         >
           🍂
         </button>
+        <p> Kies een jaargetijde</p>
       </div>
     )
   }
