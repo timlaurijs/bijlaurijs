@@ -15,6 +15,7 @@
 - [Datamodel](#Datamodel)
 - [Git version control](#Git-version-control)
 - [CMS repo](#CMS-repo)
+- [Deployment](#Deployment)
 
 ## App Demo
 Visit [bijlaurijs developer mode](https://bijlaurijs.timlaurijs.xyz/).  
@@ -119,3 +120,9 @@ Go to my [CMS repo](https://github.com/timlaurijs/bijlaurijs-cms)
 ## Backend repo
 
 Go to my [Backend repo](https://github.com/timlaurijs/bijlaurijs-backend)
+
+## Deployment
+
+I Deployed my app to a container I host on DigitalOcean using Docker.  
+Go to my [Dockerfile](https://github.com/timlaurijs/bijlaurijs-client/blob/development/Dockerfile)  
+Go to my [nginx config file](https://github.com/timlaurijs/bijlaurijs-client/blob/development/nginx.default.conf)  
