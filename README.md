@@ -89,8 +89,9 @@ Go to my [Project board](https://github.com/timlaurijs/bijlaurijs-client/project
 ![model admin](https://github.com/timlaurijs/bijlaurijs-client/blob/development/Readme-assets/admin%20page.png "model admin")
 
 ## Datamodel
-
-![model front]()
+I have started the project setting up a datamodel to store the apps's images and text. However after some deliberation regarding the admin's (needed) ability to manage the app's content I chose to use a CMS (Sanity IO). Since Sanity provided me with a sign-in page I didn't need my backend anymore.
+If you are interested however, my initial datamodel looked like this:
+![model front](https://raw.githubusercontent.com/timlaurijs/bijlaurijs-client/development/Readme-assets/db%20diagram.png)
 
 ## Used Technologies
 🦴 highlight files from my backend I ended up not using because I switched to Sanity CMS
