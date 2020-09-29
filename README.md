@@ -19,10 +19,7 @@
 
 ## App Demo
 Visit [bijlaurijs developer mode](https://bijlaurijs.timlaurijs.xyz/).  
-
-![iphone version](https://im6.ezgif.com/tmp/ezgif-6-1ccfd49a7ee6.gif "recorden od iphone 11").  
-
-
+![mobile version](https://github.com/timlaurijs/bijlaurijs-client/blob/development/Readme-assets/iphone-format.gif)  
 
 ## ‘Bij Laurijs’ concept
 
