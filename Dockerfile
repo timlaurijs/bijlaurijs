@@ -1,4 +1,4 @@
-FROM node:alpine as builder
+FROM node:10-alpine as builder
 
 ARG REACT_APP_SANITY_PROJECT_ID
 ENV REACT_APP_SANITY_PROJECT_ID=${REACT_APP_SANITY_PROJECT_ID}
@@ -6,6 +6,7 @@ ARG REACT_APP_MAPBOX_ACCESS_TOKEN
 ENV REACT_APP_MAPBOX_ACCESS_TOKEN=${REACT_APP_MAPBOX_ACCESS_TOKEN}
 
 ADD package*.json ./
+RUN npm cache clean --force
 RUN npm install --only=production
 ADD . .
 RUN npm run-script build
