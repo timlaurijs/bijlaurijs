@@ -6,6 +6,8 @@ import Timeline from "../components/Timeline"
 import Footer from "../components/Footer"
 import SeasonPicker from "../components/SeasonPicker"
 
+//ok
+
 export default function Home() {
   return (
     <div className="Home">
