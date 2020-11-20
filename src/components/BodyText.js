@@ -9,7 +9,6 @@ import {
 
 export default function BodyText() {
   const menuItem = useSelector(selectCurrentMenuItem)
-
   const season = useSelector(selectSeason)
 
   const seasonStyling = (season) => {
@@ -25,8 +24,12 @@ export default function BodyText() {
       {menuItem &&
         menuItem.body
           .filter(({ _type }) => _type === "block")
-          .map((block) => (
-            <BlockContent key={menuItem.id} blocks={block} serializers={{}} />
+          .map((block, i) => (
+            <BlockContent
+              key={`${menuItem.id}-${i}`}
+              blocks={block}
+              serializers={{}}
+            />
           ))}
     </div>
   )
